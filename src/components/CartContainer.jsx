@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '../features/cart/cartSlice';
 
 const CartContainer = () => {
-const dispatch = useDispatch();
- const { cartItems, total, amount } = useSelector((store) => {
+    const dispatch = useDispatch();
+    const { cartItems, total, amount } = useSelector((store) => {
         return store.cart
     })
 
@@ -35,7 +35,7 @@ const dispatch = useDispatch();
             <div className='cart-total'>
                 <h4>total <span>${total}</span></h4>  
             </div>
-            <button className='btn clear-btn' onClick={()=> dispatch(clearCart)}>
+            <button className='btn clear-btn' onClick={()=> dispatch(clearCart())}>
                 clear cart
             </button>
         </footer>
