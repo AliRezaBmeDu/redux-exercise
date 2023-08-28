@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Redux Steps</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div>
+            <h1>Steps</h1>
+            <ul>
+                <li>Insall react
+                    <p>npx create-react-app ./</p>
+                </li>
+                <li>Install redux
+                    <p>npm i react-redux @reduxjs/toolkit</p>
+                </li>
+                <li>store.js
+                    <p>
+                        import { configureStore } from "@reduxjs/toolkit";
+                        import cartReducer from './features/cart/cartSlice'
+                        export const store = configureStore({
+                            reducer: {
+                                cart: cartReducer
+                            }
+                        })
+                    </p>
+                </li>
+                <li>features/cart/cartSlice.js
+                    <p>
+                        import { createSlice } from "@reduxjs/toolkit";
+
+                        const initialState = {
+                            cartItems: [],
+                            amount: 0,
+                            total: 0,
+                            isLoading: true,
+                        }
+
+                        const cartSlice = createSlice({
+                            name: 'cart',
+                            initialState
+                        });
+
+                        // console.log(cartSlice)
+
+                        export default cartSlice.reducer
+                    </p>
+                </li>
+                <li>
+                    <p>Install redux devTools in chrome extension</p>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
